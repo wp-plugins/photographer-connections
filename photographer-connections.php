@@ -2,12 +2,11 @@
 /*
 Plugin Name: Photographer Connections
 Plugin URI: http://photographyblogsites.com/wordpress-plugins/photographer-connections
-Description: Submit new leads to ShootQ
+Description: Connect to photography sites: SmugMug, Pictage, ShootQ.
 Author: Marty Thornley
-Version: 0.1
+Version: 1.0
 Author URI: http://martythornley.com/
 */
-
 /*  Copyright 2011  Partner Interactive, LLC.
 
     This program is free software; you can redistribute it and/or modify

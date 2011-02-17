@@ -98,6 +98,19 @@ In order for your Contact Form 7 forms to send info to ShootQ, they must use fie
 
 == Frequently Asked Questions ==
 
+**What is my Pictage Studio ID?**
+
+Log in at Pictage and go to My Account > Manage Studio. It's usually your first and 
+last initials, followed by 3 numbers. I.E. AA123
+
+**Some of my Pictage events are not listed, why?**
+
+Be sure the event is set to be "searchable" from "Edit Info & Settings".
+
+**What if I don't want a Pictage event listed?**
+
+Be sure the event is not set to be "searchable" from "Edit Info & Settings".
+
 **Do SmugMug images have to link to the image on SmugMug?**
 
 For now, yes. But they work with the Shadowbox JS plugin, which will make them popup into a nice overlay window so that the user never leaves your site.

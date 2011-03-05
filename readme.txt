@@ -1,8 +1,8 @@
 === Photographer Connections ===
 Contributors: Marty Thornley	
-Tags: contact, integration, ShootQ, Pictage, SmugMug, Flickr, Picasa, photography
+Tags: contact form 7, ShootQ, Pictage, SmugMug, photography, Album Exposure
 Requires at least: 2.9.0
-Tested up to: 3.0.5
+Tested up to: 3.1
 Stable tag: trunk
 
 This plugin connects different photography related API's to WordPress. For Example: ShootQ integration allows Contact Form 7 forms to send info to ShootQ.
@@ -18,16 +18,35 @@ For Example: ShootQ integration allows contact forms to send info to ShootQ, usi
 1. [shootq_form]
 1. [pictage_events]
 1. [smugmug_albums]
+1. [album_exposure]
 
 == Installation ==
 
 Install and activate the plugin. 
+
+You will need accounts with each site to use them:
+* [Pictage](http://pictage.com)
+* [ShootQ](http://shootq.com)
+* [SmugMug](http://smugmug.com)
+* [Album Exposure](http://albumexposure.com)
 
 = General =
 
 * Look in the main admin menu for "Photographer Connections".
 * Activate each module you want to use.
 * Currently there is access to Pictage, SmugMug and ShootQ.
+
+= Album Exposure =
+
+* Activate Pictage at "Photographer Connections".
+* Visit "Photographer Connections->Album Exposure".
+* Add your Album Exposure user name.
+
+Add short code [album_exposure] to any page to embed the Album Exposure app inside your site.
+Select the 'Album Exposure' page template to make it go full screen.
+If the 'Album Exposure' template was not added to your theme, you can download a sample from 'Photographer Connections->Album Exposure'
+
+[http://albumexposure.com](http://albumexposure.com)
 
 = Pictage =
 
@@ -39,6 +58,8 @@ Pictage allows you to list all your active events.
 
 Just add the shortcode [pictage_events] to any post or page.
 
+[http://pictage.com](http://pictage.com)
+
 = SmugMug =
 
 * Activate SmugMug at "Photographer Connections".
@@ -49,6 +70,8 @@ To display all SmugMug albums, use [smugmug_albums].
 To display one album, use [smugmug_albums album="My Album Name"]
 
 Look on the SmugMug settings page after you save your account info and it will include shortcodes for all available albums.
+
+[http://smugmug.com](http://smugmug.com)
 
 = ShootQ =
 
@@ -62,6 +85,8 @@ To have contact form information sent to ShootQ, you need to install and use Con
 Install [Contact Form 7](http://wordpress.org/extend/plugins/contact-form-7/) and set up a form.
 
 The plugin should also work with the contact forms in ProPhotoBlogs Version 3, but has not been fully tested.
+
+[http://shootq.com](http://shootq.com)
 
 = ShootQ with Contact Form 7 =
 
@@ -125,8 +150,19 @@ Yes. This was built for [PhotographyBlogSites.com](http://photographyblogsites.c
 
 == Changelog ==
 
+= 1.1 =
+
+* Ready for 3.1...
+* Made admin menus ready for new network dashboard
+* fixed a couple typos in sample module. Doesn't effect plugin operation.
+
+**New Module**
+Album Exposure - [visit albumexposure.com](http://albumexposure.com)
+
 = 1.0 =
+
 * fixed readme, corrected version number, description.
 
 = 0.1 =
+
 * Initial upload

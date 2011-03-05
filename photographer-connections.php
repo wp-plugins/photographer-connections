@@ -4,7 +4,7 @@ Plugin Name: Photographer Connections
 Plugin URI: http://photographyblogsites.com/wordpress-plugins/photographer-connections
 Description: Connect to photography sites: SmugMug, Pictage, ShootQ.
 Author: Marty Thornley
-Version: 1.0
+Version: 1.1
 Author URI: http://martythornley.com/
 */
 /*  Copyright 2011  Partner Interactive, LLC.
@@ -25,20 +25,52 @@ Author URI: http://martythornley.com/
 
 */
 
-	if (!defined ('BLOGSITE_CONNECT_PLUGIN_BASEDIR')) { define ('BLOGSITE_CONNECT_PLUGIN_BASEDIR', dirname(__FILE__)); };
+	// Check WP Versions
+ 	global $wp_db_version;
 
+	$GLOBALS['bsc_version_300'] = 'false';
+	$GLOBALS['bsc_version_305'] = 'false';
+	$GLOBALS['bsc_version_310'] = 'false';
+
+
+	if ( $wp_db_version > 13000 ) {
+		$GLOBALS['bsc_version_300'] = 'true'; //Version 3.0 or greater!
+	}	
+	if ( $wp_db_version >= 15477 ) {
+		$GLOBALS['bsc_version_305'] = 'true'; //Version 3.0.5 or greater!
+	}	
+	if ( $wp_db_version >= 17056 ) {
+		$GLOBALS['bsc_version_310'] = 'true'; //Version 3.1 or greater!
+	}		
+	
+	if (!defined ('BLOGSITE_CONNECT_PLUGIN_BASEDIR')) { define ('BLOGSITE_CONNECT_PLUGIN_BASEDIR', dirname(__FILE__)); };
+	
+	$pluginURL = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__));
+	if (!defined ('BLOGSITE_CONNECT_PLUGIN_URL')) { define ('BLOGSITE_CONNECT_PLUGIN_URL', $pluginURL); };
+	
 	blogsite_connect_include_folder('library/functions');
 	blogsite_connect_include_folder('modules');
 
-	add_action ('admin_menu', 				'blogsite_connect_create_menu');
 	add_action( 'admin_init', 				'blogsite_connect_register_settings' );
 	add_action( 'admin_init', 				'blogsite_connect_update_settings' );
+
+	add_action ('admin_menu', 				'blogsite_connect_create_user_menu');
 	
-function blogsite_connect_create_menu() {
+	if ( $GLOBALS['bsc_version_310'] == 'true') {
+		add_action ('network_admin_menu', 	'blogsite_connect_create_super_menu');
+	}
 	
+function blogsite_connect_create_super_menu() {
+	// multisite Super Admin Menu
+	add_submenu_page('settings.php', 'Photographer Connections', 'Photographer Connections', 10, 'blogsite_photo_connect_settings', 'blogsite_photo_connect_super_admin');
+}
+	
+function blogsite_connect_create_user_menu() {
 	// multisite Supre Admin Menu
-	add_submenu_page('ms-admin.php', 'Photographer Connections', 'Photographer Connections', 10, 'blogsite_photo_connect_settings', 'blogsite_photo_connect_super_admin');
-	
+	if ( $GLOBALS['bsc_version_310'] == 'false') {
+		add_submenu_page('ms-admin.php', 'Photographer Connections', 'Photographer Connections', 10, 'blogsite_photo_connect_settings', 'blogsite_photo_connect_super_admin');
+	}
+		
 	// test version for single user...
 	//add_menu_page('Photographer Connections', 'Photographer Connections', 'administrator', 'blogsite_photo_connect', 'blogsite_photo_connect_super_admin',plugins_url('/icon.jpg', __FILE__));
 	
@@ -87,7 +119,6 @@ function blogsite_photo_connect_settings_page(){
     <?php settings_fields( 'blogsite_connect_settings_group' ); ?>
 	<?php $blogsite_connect_settings = get_option('blogsite_connect_settings'); ?>
 	<?php $blogsite_connect_site_settings = get_site_option('blogsite_connect_site_settings'); ?>
-
 		<div class="pane">
 			<h3>Photography Vendors</h3>
 			<p>What services do you use?</p>

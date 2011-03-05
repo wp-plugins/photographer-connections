@@ -13,10 +13,6 @@
 	
 */
 
-
-?>
-
-<?php
 	add_action ('blogsite_connect_extra', 				'blogsite_connect_SAMPLE_create_menu');
 	add_filter ('blogsite_connect_extra_settings',		'blogsite_connect_SAMPLE_settings');
 	
@@ -40,7 +36,7 @@ function blogsite_connect_SAMPLE_settings($connect_settings){
 }
 
 function blogsite_connect_register_SAMPLE_settings() {
-	register_setting( 'blogsite_SAMPLE_settings_group', 'blogsite_connect_register_SAMPLE_settings');
+	register_setting( 'blogsite_SAMPLE_settings_group', 'blogsite_SAMPLE_settings');
 }
 function blogsite_connect_SAMPLE_create_menu() {
 	$blogsite_connect_settings = get_option('blogsite_connect_settings');	

@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * 	Pictage module for Photographer Connections
+ *
+ *	Adds short code [pictage_events]
+ * 
+ */
+
 	add_action 	('blogsite_connect_extra', 				'blogsite_connect_pictage_create_menu');
 	add_filter 	('blogsite_connect_extra_settings',		'blogsite_connect_pictage_settings');
 	

@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * 	SmugMug module for Photographer Connections
+ *
+ *	Adds short code [smugmug_albums], embedding form in page from ShootQ
+ * 
+ */
+
 	require_once("smugmug/phpsmug/phpSmug.php"); 
 	
 	add_action ('blogsite_connect_extra', 				'blogsite_connect_smugmug_create_menu');

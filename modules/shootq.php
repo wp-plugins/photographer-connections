@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * 	ShootQ module for Photographer Connections
+ *
+ *	Adds short code [shootq_form], embedding form in page from ShootQ
+ *	Adds functionality to Contact Form 7, allowing form data to be sent to ShootQ
+ * 
+ */
+
 	add_action ('blogsite_connect_extra',				'blogsite_connect_shootq_create_menu');
 	add_filter ('blogsite_connect_extra_settings',		'blogsite_connect_shootq_settings',1,1);
 
@@ -8,11 +16,6 @@
 	add_action ('wpcf7_before_send_mail', 				'blogsite_shootq_send');	
 
 	add_shortcode('shootq_form', 							'blogsite_add_shootq');
-	//add_filter( 'the_content', 							'last_form_check',9999);
-	
-function last_form_check() {
-	print_r( get_option ('last_form_check'));
-}
 
 function blogsite_connect_add_shootq_functions() {
 	$blogsite_connect_settings = get_option('blogsite_connect_settings');	

@@ -46,7 +46,7 @@ Add short code [album_exposure] to any page to embed the Album Exposure app insi
 Select the 'Album Exposure' page template to make it go full screen.
 If the 'Album Exposure' template was not added to your theme, you can download a sample from 'Photographer Connections->Album Exposure'
 
-[http://albumexposure.com](http://albumexposure.com)
+[http://albumexposure.com](http://albumexposure.com/?referrer=PHOTOBLOGSITES)
 
 = Pictage =
 
@@ -164,7 +164,7 @@ Yes. This was built for [PhotographyBlogSites.com](http://photographyblogsites.c
 * fixed a couple typos in sample module. Doesn't effect plugin operation.
 
 **New Module**
-Album Exposure - [visit albumexposure.com](http://albumexposure.com)
+Album Exposure - [visit albumexposure.com](http://albumexposure.com/?referrer=PHOTOBLOGSITES)
 
 = 1.0 =
 

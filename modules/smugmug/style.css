@@ -1,0 +1,18 @@
+.main			{ width:1000px; margin:0 auto; height:130px; display: none; }
+ 
+.thumbnails 	{ height: 50px; float: left; padding: 2px; margin: 10px; border: 1px solid #bababa; }
+
+.book			{ width:208px; float:left; margin:10px; border:1px #dedede solid; padding:5px; }
+
+.title			{ margin-bottom:6px; }
+ 
+.description	{ font-size:11px; font-family:Geneva, Arial, Helvetica, sans-serif; }
+
+.date			{ font-size:10px; color:#999; margin-top:4px; }
+
+#loader			{ margin: 200px 0 0 0 ; border-top: 1px solid #D5D5D5; border-bottom: 1px solid #D5D5D5; padding:40px 0; display:none; }
+
+a				{ border: none; }
+
+h1				{ clear: both; }
+

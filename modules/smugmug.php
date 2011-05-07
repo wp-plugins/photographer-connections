@@ -361,7 +361,7 @@
 		$smug = blogsite_connect_smugmug_connection();
 		if ( is_object( $smug ) ) {
 			try {
-				$albums = $smug->albums_get( 'Response=Heavy' );
+				$albums = $smug->albums_get();
 			}	
 			catch( Exception $e ) {
 				echo "{$e->getMessage()} (Error Code: {$e->getCode()}) - blogsite_connect_get_smugmug_albums";
@@ -558,7 +558,9 @@
 		$album_name = $album;	 
 		$html_final = '<ul class="smugmug-gallery-outer-wrapper">';
 		$html_final .= '<li class="smugmug-gallery-loader"></li>';
-	
+		
+		$albums = blogsite_connect_get_smugmug_albums();
+		
 		if ( $album_name == '' && is_array( $albums ) && !empty ( $albums ) ) {
 			foreach ($albums as $album) {
 				$html_final .= '<li class="smugmug-gallery-wrapper">';
@@ -574,7 +576,6 @@
 	
 			}
 		} else {
-			$albums = blogsite_connect_get_smugmug_albums();
 			if ( is_array( $albums ) && !empty ( $albums ) ) {
 				foreach ($albums as $album) {
 					if ($album['Title'] == html_entity_decode($album_name)) {

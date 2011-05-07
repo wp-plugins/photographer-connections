@@ -150,6 +150,10 @@ Yes. This was built for [PhotographyBlogSites.com](http://photographyblogsites.c
 
 == Changelog ==
 
+= 1.3.1 =
+
+fixed glitch in smugmug album display in shortcodes
+
 = 1.3 =
 
 Fixed SmugMug Error reporting, removing uncaught exception bugs

@@ -4,7 +4,7 @@ Plugin Name: Photographer Connections
 Plugin URI: http://photographyblogsites.com/wordpress-plugins/photographer-connections
 Description: Connect to photography sites: SmugMug, Pictage, ShootQ.
 Author: Marty Thornley
-Version: 1.3
+Version: 1.3.1
 Author URI: http://martythornley.com/
 */
 /*  Copyright 2011  Partner Interactive, LLC.
